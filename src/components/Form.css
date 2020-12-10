@@ -1,0 +1,123 @@
+.boxflex{
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vh;
+    
+    
+    
+}
+
+
+
+.form{
+    
+    width: 40vw;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    
+    
+    
+    
+
+}
+
+
+
+
+.list{
+    width: 40vw;
+    text-align: center;
+
+    
+    
+    
+}
+
+h1{
+    text-align: center;
+    color: #ebeb00;
+}
+
+h2{
+    text-align: center;
+    color: #ebeb00;
+}
+
+
+Form Button{
+    background-color: rgba(0, 0, 0, 0.8);
+    border: none;
+    color: #ebeb00;;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 20px;
+    border-radius: 4px;
+    transition: 0.3s;;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    border: 4px solid #ebeb00;;
+    
+}
+
+Form Button:hover{
+    opacity: 0.5;
+}
+
+input[type=text]{
+    padding: 16px 16px;
+    border-radius: 5px;
+    
+    width: 50%;
+    
+    
+
+  }
+label{
+    font-size: 16px;
+    margin: 10px;
+    text-align: center;
+    
+}
+  select{
+      margin: 5px;
+      padding: 10px;
+      
+      
+      
+  }
+
+  @media (max-width: 800px) {
+    .form{
+    
+        width: 100vw;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.8);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
+        border-radius: 8px;
+        
+        
+        
+        
+    
+    }
+
+    .list{
+        width: 100vw;
+        text-align: center;
+
+    }
+   select{
+       text-align: center;
+   } 
+
+   label{
+       text-align: center;
+   }
+  }
