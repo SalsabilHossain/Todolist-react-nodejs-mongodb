@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const todom = require('./model/todo');
-const morgan = require('morgan');
+// const todom = require('./model/taskModel');
+// const morgan = require('morgan');
+const taskRouter = require('./routes/taskRoutes');
 const cors = require('cors');
 
 
@@ -10,30 +11,15 @@ const cors = require('cors');
 const app = express();
 
 //middleware
-app.use(cors())
-app.use(morgan('dev'));
+app.use(cors());
+// app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static(`${__dirname}/public`));
 
+//Routes 
+app.use('/taskRoutes', taskRouter);
 
-
-
-//get
-app.get('/', (req, res) => {
-  todom.find()
-      .then( todoli => {
-        console.log(todoli);
-      })
-      .catch( err => {
-          res.status(400).json('failed');
-      });
-  
-});
-
-//post
-app.post('/add', (req, res) => {
-  res.send(req.body);
-  console.log(req.body)
-} );
 
 
 // listen for requests

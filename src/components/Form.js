@@ -26,7 +26,7 @@ function Form({setInputText, inputText, todos, setTodos, select, setselect}){
           }
         console.log(li);
         setTodos([...todos, {text: inputText, completed: false, id: Math.random(), select: select}]);
-        axios.post('http://localhost:5000/add', li)
+        axios.post('http://localhost:5000/taskRoutes/add', li)
         .then(res => {
             console.log(res);
             console.log(res.data);
