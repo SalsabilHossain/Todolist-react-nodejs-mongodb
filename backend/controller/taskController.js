@@ -21,3 +21,14 @@ exports.createTask = async (req, res) => {
         });
     }
 };
+
+
+exports.updateTask = async (req, res) => {
+    try {
+        const newTask = await Task.findById(req.params.id);
+        
+    }
+    catch (error) {
+        res.send('error')
+        }
+    }

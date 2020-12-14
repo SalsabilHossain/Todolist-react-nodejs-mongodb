@@ -6,6 +6,7 @@ const Schema = mongoose.Schema;
 const Todo = new Schema(
     {
         tasks: { type: String, required: true },
+        
     },
     { timestamps: true },
 )

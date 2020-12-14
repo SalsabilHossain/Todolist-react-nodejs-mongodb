@@ -6,4 +6,9 @@ router
     .route('/add')
     .post(taskController.createTask);
 
+ 
+router 
+    .route('/update')
+    .put(taskController.updateTask);
+
 module.exports = router;

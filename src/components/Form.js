@@ -47,10 +47,10 @@ function Form({setInputText, inputText, todos, setTodos, select, setselect}){
                         <h1>TO-DO LIST</h1>
                         <h2>Task</h2>
                         
-                        <input value={inputText} onChange={inputTextHandler} type="text" name="name" /><br/>
+                        <input value={inputText} onChange={inputTextHandler} type="text" name="name" required/><br/>
                             <label>
                                 Set Priority :
-                                <select value={select} onChange={Priority} > 
+                                <select value={select} onChange={Priority} required> 
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
