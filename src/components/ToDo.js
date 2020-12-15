@@ -48,8 +48,8 @@ const ToDo = ({text, todo, todos, setTodos, select, setselect}) => {
     </li>
            
     <button onClick={deleteHandler} className="trash-btn"><i className="fas fa-trash"></i></button>
-    <input type="text" name="name" required/>
-    <button>Update</button>
+    <input type="text" name="name" id="update" required/>
+    <button id='btnupdate'>Update</button>
             
     </div>
         

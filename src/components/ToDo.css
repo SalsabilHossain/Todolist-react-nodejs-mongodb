@@ -54,7 +54,24 @@
         
         
     }
-  
+  #update{
+    width: 15%;
+    height: 15px;
+  }
+
+  #btnupdate{
+  background-color: #282828; /* Green */
+  border: solid 3px #ebeb00;
+  border-radius: 5px;
+  color: #ebeb00 ;
+  padding: 8px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+
+  }
     label{
       color: ghostwhite;
     }
