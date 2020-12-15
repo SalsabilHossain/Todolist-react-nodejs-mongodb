@@ -8,7 +8,11 @@ router
 
  
 router 
-    .route('/update')
+    .route('/:id')
     .put(taskController.updateTask);
+
+router
+    .route('/:id')
+    .delete(taskController.deletetask);
 
 module.exports = router;

@@ -23,6 +23,7 @@ function Form({setInputText, inputText, todos, setTodos, select, setselect}){
         e.preventDefault();
         const li = {
             tasks: inputText
+            
           }
         console.log(li);
         setTodos([...todos, {text: inputText, completed: false, id: Math.random(), select: select}]);

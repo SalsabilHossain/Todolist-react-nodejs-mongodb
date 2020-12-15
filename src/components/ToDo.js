@@ -28,7 +28,11 @@ const ToDo = ({text, todo, todos, setTodos, select, setselect}) => {
         );
     };
    
+    const updateHandler = () => {
+        
+        
 
+    };
 
 
     return(

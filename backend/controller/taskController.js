@@ -25,10 +25,28 @@ exports.createTask = async (req, res) => {
 
 exports.updateTask = async (req, res) => {
     try {
-        const newTask = await Task.findById(req.params.id);
+        const newTask = await Task.findByIdAndUpdate(req.params.id);
+        console.log(newTask);
+        newTask= req.body;
+        const a1 =await newTask.save();
+        res.json(a1);
+        
+
         
     }
     catch (error) {
-        res.send('error')
+        res.send('error');
         }
+    }
+
+    exports.deletetask = async (req, res) => {
+       const id=req.params.id;
+       Task.findByIdAndDelete(id)
+       .then(result =>{
+           console.log('deleted');
+        
+       })
+       .catch(err =>{
+           console.log(err);
+       })
     }
