@@ -43,18 +43,7 @@ exports.updateTask = async (req, res) => {
         }
     }
 
-    exports.deletetask = async (req, res) => {
-       const id=req.params.id;
-       Task.findByIdAndDelete(id)
-       .then(result =>{
-           console.log('deleted');
-        
-       })
-       .catch(err =>{
-           console.log(err);
-       })
-    }
-
+    
 
     exports.display = async (req, res) => {
         Task.find({}, (err,result)=>{
@@ -66,3 +55,11 @@ exports.updateTask = async (req, res) => {
         
      }
  
+
+     exports.deletetask = async (req, res) => {
+        const id= req.params.id;
+        await Task.findByIdAndDelete(id);
+        res.send("deleted");
+
+
+        }

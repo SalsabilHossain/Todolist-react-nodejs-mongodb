@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './ToDo.css'
 import Todolist from './Todolist'
+
 import axios from 'axios';
 
 
@@ -11,15 +12,18 @@ const ToDo = ({text, obj, todos, setTodos, select, setselect}) => {
     const updateTextHandler = (e) => {
         console.log(e.target.value);
         setnewtask(e.target.value);
+        
+        
 
     };
 
-    /*const deleteHandler = () => {
-        setTodos(todos.filter((el) => el.id !==todo.id));
-        
+    const deleteHandler = (id) => {
+        axios.delete('http://localhost:5000/taskRoutes/'+id)
+        alert("Successfully Deleted")
+        window.location.reload(false);
         
 
-    };*/
+    };
     /*const check = (select) => {
         setTodos(todos.map(item => {
             if(item.id === todo.id){
@@ -39,7 +43,8 @@ const ToDo = ({text, obj, todos, setTodos, select, setselect}) => {
             id: id,
             newtask: newtask,
         })
-        
+        alert("Successfully Updated")
+        window.location.reload(false);
 
     };
 
@@ -56,7 +61,7 @@ const ToDo = ({text, obj, todos, setTodos, select, setselect}) => {
                 
     </li>
            
-    <button  className="trash-btn"><i className="fas fa-trash"></i></button>
+    <button  className="trash-btn" onClick={()=> deleteHandler(obj._id)}><i className="fas fa-trash"></i></button>
     <input type="text" name="name" id="update" onChange={updateTextHandler} required/>
     <button id='btnupdate' onClick={()=> updateHandler(obj._id)}>Update</button>
             
