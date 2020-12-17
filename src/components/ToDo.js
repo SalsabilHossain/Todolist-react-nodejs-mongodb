@@ -1,20 +1,20 @@
-import React from 'react';
+import React, { useEffect} from 'react';
 import './ToDo.css'
 import Todolist from './Todolist'
+//import axios from 'axios';
 
 
-const ToDo = ({text, todo, todos, setTodos, select, setselect}) => {
+const ToDo = ({text, obj, todos, setTodos, select, setselect}) => {
     
 
 
-
-    const deleteHandler = () => {
+    /*const deleteHandler = () => {
         setTodos(todos.filter((el) => el.id !==todo.id));
         
         
 
-    };
-    const check = (select) => {
+    };*/
+    /*const check = (select) => {
         setTodos(todos.map(item => {
             if(item.id === todo.id){
                 return{
@@ -26,7 +26,7 @@ const ToDo = ({text, todo, todos, setTodos, select, setselect}) => {
             return item;
         })
         );
-    };
+    };*/
    
     const updateHandler = () => {
         
@@ -39,15 +39,15 @@ const ToDo = ({text, todo, todos, setTodos, select, setselect}) => {
         
     <div className='todo'>
 
-    <input type="checkbox" onChange={check}/>
+    <input type="checkbox" />
 
-    <li className={`todo-item ${todo.completed ? "completed" : ''}`}>
+    <li >
     
-            {text}. <label>Priority: {select}</label>
+            {obj.tasks}
                 
     </li>
            
-    <button onClick={deleteHandler} className="trash-btn"><i className="fas fa-trash"></i></button>
+    <button  className="trash-btn"><i className="fas fa-trash"></i></button>
     <input type="text" name="name" id="update" required/>
     <button id='btnupdate'>Update</button>
             

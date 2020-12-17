@@ -15,4 +15,8 @@ router
     .route('/:id')
     .delete(taskController.deletetask);
 
+router
+    .route('/read')
+    .get(taskController.display);
+
 module.exports = router;

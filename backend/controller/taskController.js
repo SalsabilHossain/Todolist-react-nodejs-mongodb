@@ -50,3 +50,15 @@ exports.updateTask = async (req, res) => {
            console.log(err);
        })
     }
+
+
+    exports.display = async (req, res) => {
+        Task.find({}, (err,result)=>{
+            if(err){
+                res.send(err)
+            }
+          res.send(result)  
+        })
+        
+     }
+ 
