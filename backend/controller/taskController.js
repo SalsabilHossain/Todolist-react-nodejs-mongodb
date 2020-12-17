@@ -24,17 +24,21 @@ exports.createTask = async (req, res) => {
 
 
 exports.updateTask = async (req, res) => {
+    const newtask = req.body.newtask;
+    const id = req.body.id;
+    console.log(newtask);
+    
     try {
-        const newTask = await Task.findByIdAndUpdate(req.params.id);
-        console.log(newTask);
-        newTask= req.body;
-        const a1 =await newTask.save();
-        res.json(a1);
+        await Task.findById(id, (err, updatedtask)=>{
+            updatedtask.tasks= newtask;
+            updatedtask.save();
+        }
         
 
+        )
         
     }
-    catch (error) {
+    catch (err) {
         res.send('error');
         }
     }
@@ -55,9 +59,9 @@ exports.updateTask = async (req, res) => {
     exports.display = async (req, res) => {
         Task.find({}, (err,result)=>{
             if(err){
-                res.send(err)
+                res.send(err);
             }
-          res.send(result)  
+          res.send(result); 
         })
         
      }

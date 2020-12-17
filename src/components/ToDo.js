@@ -1,12 +1,18 @@
-import React, { useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import './ToDo.css'
 import Todolist from './Todolist'
-//import axios from 'axios';
+import axios from 'axios';
 
 
 const ToDo = ({text, obj, todos, setTodos, select, setselect}) => {
     
+    const [newtask, setnewtask] = useState();
 
+    const updateTextHandler = (e) => {
+        console.log(e.target.value);
+        setnewtask(e.target.value);
+
+    };
 
     /*const deleteHandler = () => {
         setTodos(todos.filter((el) => el.id !==todo.id));
@@ -28,8 +34,11 @@ const ToDo = ({text, obj, todos, setTodos, select, setselect}) => {
         );
     };*/
    
-    const updateHandler = () => {
-        
+    const updateHandler = (id) => {
+        axios.put('http://localhost:5000/taskRoutes/update', {
+            id: id,
+            newtask: newtask,
+        })
         
 
     };
@@ -48,8 +57,8 @@ const ToDo = ({text, obj, todos, setTodos, select, setselect}) => {
     </li>
            
     <button  className="trash-btn"><i className="fas fa-trash"></i></button>
-    <input type="text" name="name" id="update" required/>
-    <button id='btnupdate'>Update</button>
+    <input type="text" name="name" id="update" onChange={updateTextHandler} required/>
+    <button id='btnupdate' onClick={()=> updateHandler(obj._id)}>Update</button>
             
     </div>
         

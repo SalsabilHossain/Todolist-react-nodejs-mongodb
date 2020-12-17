@@ -35,6 +35,7 @@
       justify-content: center;
       transition: all 1s ease;
       color: #ebeb00;
+
       
       
       
@@ -70,7 +71,7 @@
   display: inline-block;
   font-size: 16px;
   margin: 10px;
-
+  cursor: pointer;
   }
     label{
       color: ghostwhite;

@@ -8,7 +8,7 @@ router
 
  
 router 
-    .route('/:id')
+    .route('/update')
     .put(taskController.updateTask);
 
 router
